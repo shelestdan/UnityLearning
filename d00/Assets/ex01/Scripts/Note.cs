@@ -14,7 +14,6 @@ public class Note : MonoBehaviour
         transform.position = startetPosition;
     }
 
-    
     void Update()
     {
         if(Input.GetKeyDown(keyCode))

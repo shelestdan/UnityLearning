@@ -6,11 +6,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject[] objects; // создание массива 
     private float time = 0f;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         time = time + Time.deltaTime;
