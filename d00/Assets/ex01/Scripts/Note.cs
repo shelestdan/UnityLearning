@@ -10,7 +10,7 @@ public class Note : MonoBehaviour
 
     void Start()
     {
-        _speed = Random.Range(minSpeed, maxSpeed);
+        _speed=Random.Range(minSpeed, maxSpeed);
         transform.position = startetPosition;
     }
 
