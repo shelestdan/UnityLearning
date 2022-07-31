@@ -8,10 +8,10 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        time=time + Time.deltaTime;
+        time += Time.deltaTime;
         if(time > 2.8f)
         {
-            Instantiate(objects[Random.Range(0, objects.Length)]); // создание объекта на сцене
+            Instantiate(objects[Random.Range(0, objects.Length)]); // создание объекта на сцене и вызов его в рандомном порядке от самого первого и до последнего
             time = 0f;
         }
 
