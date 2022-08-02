@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    float powerBall;
+    float powerBall, time;
     bool isPunchet;
-    float time;
     const float topWall = 5f;
+    int score = 0;
     Vector3 direction;
     void Start()
     {
@@ -15,7 +15,6 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        
         if(!isPunchet)
         {
             if(transform.position.y < 3f)
@@ -28,7 +27,9 @@ public class Ball : MonoBehaviour
             }
             if(transform.position.y > 2.7f && transform.position.y < 3.3f)
             {
+                score += 15;
                 Destroy(gameObject);
+                Debug.Log(score);
             }
             return;
         }
@@ -36,8 +37,16 @@ public class Ball : MonoBehaviour
         if(transform.position.y >= topWall)
         {
             direction = Vector3.down;
+            score -= 5;
+            Debug.Log(score);
         }
-        if(time >= 3f)
+        if (transform.position.y > 2.7f && transform.position.y < 3.3f && powerBall < 0.5f)
+        {
+            score += 15;
+            Destroy(gameObject);
+            Debug.Log(score);
+        }
+        if (time >= 3f)
         {
             isPunchet = false;
             powerBall = 0f;
@@ -45,7 +54,6 @@ public class Ball : MonoBehaviour
         }
         transform.Translate(direction * powerBall * Time.deltaTime);
     }
-
     public void Punch(float power)
     {
         isPunchet = true;

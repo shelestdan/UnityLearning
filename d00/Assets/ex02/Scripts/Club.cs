@@ -9,11 +9,6 @@ public class Club : MonoBehaviour
     [SerializeField] Transform ballTransform;
     float currentPower;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(Input.GetKey(KeyCode.Space))
